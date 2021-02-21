@@ -56,7 +56,7 @@ int main(void)
     {
         printf("I am unhappy.\n");
     }
-    else
+    else if(1 == 3 && 3 == 2)
     {
         printf("I am happy.\n");
     }
