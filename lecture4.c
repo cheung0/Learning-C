@@ -1,35 +1,33 @@
 #include <stdio.h>
-#include <string.h>
-
-void draw(int h);
-
-typedef struct
-{
-    int age;
-}
-person;
 
 int main(void)
 {
-    person people[2];
-    people[0].age = 19;
-    people[1].age = 12;
+    /*
+    addresses are in hexadecimal
+    address of a variable is a pointer
+    we can go to a pointer with *
+    we can get the address of a variable with &
+    */
+    int n = 32;
+    printf("Address of %i is %p\n", n, &n);
+    printf("n is %i\n", *&n);
 
-    draw(100);
-}
+    int *p = &n;
+    printf("Address of %i is %p\n", n, p);
 
-void draw(int h)
-{
-    if (h == 0)
-    {
-        return;
-    }
+    char *s = "Big Mike";
+    printf("%s\n", s);
 
-    draw(h - 1);
+    printf("Address of first character is %p\n", &s[0]);
+    printf("Address of second character is %p\n", &s[1]);
+    printf("Third character is %c\n", *(s + 2));
 
-    for (int i = 0; i < h; i++)
-    {
-        printf("#");
-    }
-    printf("\n");
+
+    /*
+    scanf
+    */
+    int x;
+    printf("x: ");
+    scanf("%i", &x);
+    printf("x: %i\n", x);
 }
